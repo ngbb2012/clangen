@@ -3001,7 +3001,7 @@ class Cat:
                     )
                     rel2.comfortable = Cat.effect_relation(
                         rel2.comfortable,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
+                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus
                     )
                     output += "Comfort decreased. "
                 else:
