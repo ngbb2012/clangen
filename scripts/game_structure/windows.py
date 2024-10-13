@@ -1880,7 +1880,7 @@ class EventLoading(UIWindow):
         frames = []
         for i in range(0, 16):
             frames.append(
-                pygame.image.load(f"resources/images/loading_animate/timeskip/{i}.png")
+                pygame.image.load('resources/images/loading_animate/timeskip/{i}.png')
             )
 
         return frames
