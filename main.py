@@ -297,6 +297,10 @@ while 1:
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
+    
+    # Updates all active particle systems.
+    for particle_system in game.active_particle_systems:
+        particle_system.update(time_delta)
     # EVENTS
     for event in pygame.event.get():
         game.all_screens[game.current_screen].handle_event(event)

@@ -142,6 +142,7 @@ class Game:
         "moon&season_open": False,
     }
     all_screens = {}
+    active_particle_systems = []
     cur_events = {}
     map_info = {}
 

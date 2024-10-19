@@ -30,6 +30,7 @@ from scripts.game_structure.game_essentials import (
     game,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from scripts.game_structure.particle_system import ParticleSystem
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
@@ -54,6 +55,14 @@ class StartScreen(Screens):
         self.warning_label = None
 
         self.social_buttons = {}
+
+        particle_system: ParticleSystem = ParticleSystem()
+        particle_system.origin = [MANAGER.root_container.get_abs_rect().size[0], 0]
+        particle_system.initial_velocity = [-300, 200]
+        particle_system.angular_velocity = 120
+        particle_system.gravity = [0, 150]
+        particle_system.start_size = 100
+        particle_system.add_particle(1)
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
