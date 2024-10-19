@@ -57,11 +57,14 @@ class StartScreen(Screens):
         self.social_buttons = {}
 
         particle_system: ParticleSystem = ParticleSystem()
-        particle_system.origin = [MANAGER.root_container.get_abs_rect().size[0], 0]
-        particle_system.initial_velocity = [-300, 200]
-        particle_system.angular_velocity = 120
-        particle_system.gravity = [0, 150]
-        particle_system.start_size = 100
+        particle_system.origin = [
+            MANAGER.root_container.get_abs_rect().size[0] / 2,
+            MANAGER.root_container.get_abs_rect().size[1] / 2,
+        ]
+        # particle_system.initial_velocity = [-300, 200]
+        particle_system.angular_velocity = 60
+        particle_system.gravity = [0, 0]
+        particle_system.start_size = 50
         particle_system.add_particle(1)
 
     def handle_event(self, event):
